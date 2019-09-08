@@ -27,11 +27,11 @@ const solarizedLightTheme = {
 
 const monokaiTheme = {
   backgroundColor: '#272821',
-  color: '#C4B5A4',
+  color: '#ddccba',
   emphasisTextColor: '#9CD32E',
   emphasisLabelColor: '#EF296E',
-  lightTextColor: '#ddccba',
-  dividerColor: '#ddccba'
+  lightTextColor: '#b2a495',
+  dividerColor: '#b2a495'
 }
 
 const ThemeMap = {
