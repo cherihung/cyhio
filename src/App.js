@@ -1,43 +1,37 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles, ThemeProvider } from '@material-ui/styles';
+import BaseWrapper from 'components/BaseWrapper';
+import TopBar from 'components/TopBar';
 import React, { useState } from 'react';
+import ThemeMap from 'styles/themes';
 
-import BaseWrapper from './components/BaseWrapper';
-import { darkTheme, lightTheme } from './styles/themes';
-
-function TopBar({children, themeSetter}) {
-
-  const useStyles = makeStyles({
-    root: {
-      backgroundColor: '#dcdcdc',
-      padding: '0.5em'
-    }
-  })
-
-  const styles = useStyles();
-
-  return (
-    <div className={styles.root}>
-      <button onClick={() => themeSetter(lightTheme)}>Toggle Theme</button>
-      {children}
-    </div>
-  )
-}
+const useStyles = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  topBar: {
+    backgroundColor: '#dcdcdc',
+    display: 'flex',
+    flexDirection: 'row-reverse'
+  }
+})
 
 function App() {
 
-  const [theme, setClassName] = useState(darkTheme);
+  const [theme, setClassName] = useState(ThemeMap.black);
+  const appStyles = useStyles();
 
   return (
-    <React.Fragment>
+    <div className={appStyles.root}>
       <CssBaseline />
-      <TopBar themeSetter={setClassName} />
-      <ThemeProvider theme={theme} >
+      <TopBar className={appStyles.topBar} themeSetter={setClassName} themeName={theme.name} />
+      <ThemeProvider theme={theme.theme} >
         <BaseWrapper>
           <div>something</div>
         </BaseWrapper>
       </ThemeProvider>
-    </React.Fragment>
+    </div>
   );
 }
 
