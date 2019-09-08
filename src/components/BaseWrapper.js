@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function BaseWrapper({children}) {
+function BaseWrapper({children, className}) {
   const baseStyles = useBaseStyles();
   const styles = useStyles();
-  const componentStyles = clsx(styles.root, baseStyles.root);
+  const componentStyles = clsx(styles.root, baseStyles.root, className);
   return (
     <div className={componentStyles}>
       <div className={baseStyles.inner}>{children}</div>

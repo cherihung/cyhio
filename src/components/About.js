@@ -4,9 +4,9 @@ import React from 'react';
 const H1 = styled('h1')(({
   theme
 }) => ({
-  color: theme.lightTextColor,
+  fontWeight: 300,
   '& span': {
-    color: theme.color
+    fontWeight: 500,
   }
 }));
 
