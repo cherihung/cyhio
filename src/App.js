@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 
 function App() {
 
-  const [theme, setClassName] = useState(ThemeMap.black);
+  const [theme, setClassName] = useState(ThemeMap.monokai);
   const appStyles = useStyles();
 
   return (

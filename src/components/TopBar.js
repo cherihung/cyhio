@@ -15,9 +15,14 @@ function _makeThemeStyles(key) {
       '&$checked': {
         color: ThemeMap[key].theme.backgroundColor
       },
-      padding: '5px'
+      padding: '2px'
     },
-    checked: {}
+    checked: {},
+    label: {
+      textTransform: 'capitalize',
+      fontSize: '10px',
+      color: '#d3d3d3'
+    }
   })
 }
 
@@ -52,18 +57,20 @@ function TopBar(props) {
   };
 
   const themeRadioChoices = ThemeChoiceKeys.map((theme) =>
-    <Radio
-      key={theme}
-      checked={selectedValue === ThemeMap[theme].name}
-      onChange={handleChange}
-      value={ThemeMap[theme].name}
-      disableRipple={true}
-      name="app-theme-selector"
-      classes={{
-        root: choiceStyles[theme].root,
-        checked: choiceStyles[theme].checked
-      }}
-    />
+    <React.Fragment key={theme}>
+      {selectedValue === ThemeMap[theme].name ? <label className={choiceStyles[theme].label}>{theme}</label> : null}
+      <Radio
+        checked={selectedValue === ThemeMap[theme].name}
+        onChange={handleChange}
+        value={ThemeMap[theme].name}
+        disableRipple={true}
+        name="app-theme-selector"
+        classes={{
+          root: choiceStyles[theme].root,
+          checked: choiceStyles[theme].checked
+        }}
+      />
+    </React.Fragment>
   )
 
   return (

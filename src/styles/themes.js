@@ -1,4 +1,4 @@
-const blackTheme = {
+const darkTheme = {
   backgroundColor: '#1c1c1c',
   color: '#e2e2e2',
   emphasisTextColor: '#fcfcfc',
@@ -7,7 +7,7 @@ const blackTheme = {
   dividerColor: '#a0a0a0'
 }
 
-const whiteTheme = {
+const brightTheme = {
   backgroundColor: '#ffffff',
   color: '#1c1c1c',
   emphasisTextColor: '#000000',
@@ -25,18 +25,31 @@ const solarizedLightTheme = {
   dividerColor: '#B8BFB8'
 }
 
+const monokaiTheme = {
+  backgroundColor: '#272821',
+  color: '#C4B5A4',
+  emphasisTextColor: '#9CD32E',
+  emphasisLabelColor: '#EF296E',
+  lightTextColor: '#ddccba',
+  dividerColor: '#ddccba'
+}
+
 const ThemeMap = {
-  black: {
-    name: 'black',
-    theme: blackTheme
+  monokai: {
+    name: 'monokai',
+    theme: monokaiTheme,
+  },
+  dark: {
+    name: 'dark',
+    theme: darkTheme
   },
   solarizedLight: {
     name: 'solarizedLight',
     theme: solarizedLightTheme
   },
-  white: {
-    name: 'white',
-    theme: whiteTheme
+  bright: {
+    name: 'bright',
+    theme: brightTheme
   },
 }
 
