@@ -1,6 +1,7 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles, ThemeProvider } from '@material-ui/styles';
 import BaseWrapper from 'components/BaseWrapper';
+import Resume from 'components/Resume';
 import TopBar from 'components/TopBar';
 import React, { useState } from 'react';
 import ThemeMap from 'styles/themes';
@@ -11,9 +12,10 @@ const useStyles = makeStyles({
     flexDirection: 'column'
   },
   topBar: {
-    backgroundColor: '#dcdcdc',
+    backgroundColor: '#919191',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    padding: '0 0.5em'
   }
 })
 
@@ -28,7 +30,7 @@ function App() {
       <TopBar className={appStyles.topBar} themeSetter={setClassName} themeName={theme.name} />
       <ThemeProvider theme={theme.theme} >
         <BaseWrapper>
-          <div>something</div>
+          <Resume />
         </BaseWrapper>
       </ThemeProvider>
     </div>
