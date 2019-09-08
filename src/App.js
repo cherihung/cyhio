@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   topBar: {
     backgroundColor: '#dcdcdc',
     display: 'flex',
-    flexDirection: 'row-reverse'
+    justifyContent: 'space-between'
   }
 })
 
