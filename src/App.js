@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { makeStyles, ThemeProvider } from '@material-ui/styles';
+import React, { useState } from 'react';
+
+import BaseWrapper from './components/BaseWrapper';
+import { darkTheme, lightTheme } from './styles/themes';
+
+function TopBar({children, themeSetter}) {
+
+  const useStyles = makeStyles({
+    root: {
+      backgroundColor: '#dcdcdc',
+      padding: '0.5em'
+    }
+  })
+
+  const styles = useStyles();
+
+  return (
+    <div className={styles.root}>
+      <button onClick={() => themeSetter(lightTheme)}>Toggle Theme</button>
+      {children}
+    </div>
+  )
+}
 
 function App() {
+
+  const [theme, setClassName] = useState(darkTheme);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <TopBar themeSetter={setClassName} />
+      <ThemeProvider theme={theme} >
+        <BaseWrapper>
+          <div>something</div>
+        </BaseWrapper>
+      </ThemeProvider>
+    </React.Fragment>
   );
 }
 
