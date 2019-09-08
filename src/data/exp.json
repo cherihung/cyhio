@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cap1",
+    "company": "Capital One",
+    "title": "Master Software Engineer, Tech Lead",
+    "dates": "OCT 2017 - PRESENT",
+    "location": "New York City & Vienna, VA",
+    "description": "Creating modern UI with React and Angular. Designing and implementing a GraphQL/Apollo Node service. Managed software delivery in its full lifecycle. Mentoring junior engineers."
+  },
+  {
+    "id": "aviture",
+    "company": "Aviture",
+    "title": "Frontend Engineer",
+    "dates": "MAR 2014 - OCT 2017",
+    "location": "Washington, DC",
+    "description": "Created  modular and shareable UI toolkit/frameworks. Designed functional prototypes and implemented applications in AngularJS, ReactJS and Backbone."
+  },
+  {
+    "id": "edweek",
+    "company": "Editorial Projects in Education",
+    "title": "Online Creative Director",
+    "dates": "SEP 2010 - OCT 2014",
+    "location": "Bethesda, MD",
+    "description": "Designed and implemented UI and analytics capabilities for the publication’s flagship website and mobile application. Directed and executed data visualization, multimedia and information projects."
+  }
+]

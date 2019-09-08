@@ -2,7 +2,9 @@ import Radio from '@material-ui/core/Radio';
 import { makeStyles } from '@material-ui/styles';
 import IconLink from 'components/IconLink';
 import githubLogo from 'images/github.svg';
+import linkedInLogo from 'images/linkedin.svg';
 import twitterLogo from 'images/twitter.svg';
+import PropTypes from 'prop-types';
 import React from 'react';
 import ThemeMap from 'styles/themes';
 
@@ -24,16 +26,17 @@ const useSocialStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: '3.5em',
+    minWidth: '8em',
     lineHeight: 0,
   },
 })
+
+const ThemeChoiceKeys = Object.keys(ThemeMap);
 
 function TopBar(props) {
 
   const { className, themeSetter, themeName } = props;
   const [selectedValue, setSelectedValue] = React.useState(themeName);
-  const ThemeChoiceKeys = Object.keys(ThemeMap);
   const socialStyles = useSocialStyles();
   
   let choiceStyles = {};
@@ -66,16 +69,26 @@ function TopBar(props) {
   return (
     <div className={className}>
       <div className={socialStyles.root}>
-        <IconLink href="https://github.com/cherihung" target="_blank" rel="noopener noreferrer">
-          <img src={githubLogo} height="20px" alt="Github" />
-        </IconLink>
-        <IconLink href="https://twitter.com/cyhung" target="_blank" rel="noopener noreferrer">
+        <div><strong>cyh.io</strong></div>
+        <IconLink href="https://twitter.com/cyhung" target="_blank" rel="noopener noreferrer" title="Twitter">
           <img src={twitterLogo} height="20px" alt="Twitter" />
+        </IconLink>
+        <IconLink href="https://linkedin.com/in/cyhung" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <img src={linkedInLogo} height="20px" alt="LinkedIn" />
+        </IconLink>
+        <IconLink href="https://github.com/cherihung" target="_blank" rel="noopener noreferrer" title="Github">
+          <img src={githubLogo} height="20px" alt="Github" />
         </IconLink>
       </div>
       <div>{themeRadioChoices}</div>
     </div>
   )
+}
+
+TopBar.propTypes = {
+  className: PropTypes.string.isRequired,
+  themeSetter: PropTypes.func.isRequired,
+  themeName: PropTypes.oneOf(ThemeChoiceKeys).isRequired
 }
 
 export default TopBar;
