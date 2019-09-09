@@ -1,4 +1,4 @@
-// import Signal from 'images/signal.svg';
+import Signal from 'images/signal.svg';
 
 const darkTheme = {
   backgroundColor: '#1c1c1c',
@@ -34,7 +34,7 @@ const monokaiTheme = {
   emphasisLabelColor: '#EF296E',
   lightTextColor: '#b2a495',
   dividerColor: '#b2a495',
-  // backgroundImage: `url(${Signal})`
+  backgroundImage: `url(${Signal})`
 }
 
 const ThemeMap = {
