@@ -1,7 +1,7 @@
 const darkTheme = {
-  backgroundColor: '#1c1c1c',
+  backgroundColor: '#060914',
   color: '#e2e2e2',
-  emphasisTextColor: '#fcfcfc',
+  emphasisTextColor: '#A9BFCC',
   emphasisLabelColor: '#636363',
   lightTextColor: '#a0a0a0',
   dividerColor: '#a0a0a0'
