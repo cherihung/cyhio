@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     flexDirection: 'column'
   },
   topBar: {
-    backgroundColor: '#919191',
+    backgroundColor: '#bfbdac',
     display: 'flex',
     justifyContent: 'space-between',
     padding: '0 1.5em 0 0.5em',

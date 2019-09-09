@@ -38,18 +38,22 @@ const ThemeMap = {
   monokai: {
     name: 'monokai',
     theme: monokaiTheme,
+    displayName: 'Monokai'
   },
   dark: {
     name: 'dark',
-    theme: darkTheme
+    theme: darkTheme,
+    displayName: 'Darkness'
   },
   solarizedLight: {
     name: 'solarizedLight',
-    theme: solarizedLightTheme
+    theme: solarizedLightTheme,
+    displayName: 'Solarized Light'
   },
   bright: {
     name: 'bright',
-    theme: brightTheme
+    theme: brightTheme,
+    displayName: 'Bright'
   },
 }
 

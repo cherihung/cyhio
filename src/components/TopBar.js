@@ -15,13 +15,13 @@ function _makeThemeStyles(key) {
       '&$checked': {
         color: ThemeMap[key].theme.backgroundColor
       },
-      padding: '2px'
+      padding: '3px'
     },
     checked: {},
     label: {
-      textTransform: 'capitalize',
+      textTransform: 'uppercase',
       fontSize: '10px',
-      color: '#d3d3d3'
+      color: '#272820'
     }
   })
 }
@@ -58,7 +58,7 @@ function TopBar(props) {
 
   const themeRadioChoices = ThemeChoiceKeys.map((theme) =>
     <React.Fragment key={theme}>
-      {selectedValue === ThemeMap[theme].name ? <label className={choiceStyles[theme].label}>{theme}</label> : null}
+      {selectedValue === ThemeMap[theme].name ? <label className={choiceStyles[theme].label}>{ThemeMap[theme].displayName}</label> : null}
       <Radio
         checked={selectedValue === ThemeMap[theme].name}
         onChange={handleChange}
