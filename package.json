@@ -2,7 +2,7 @@
   "name": "cyhio",
   "author": "Chienyi Cheri Hung (http://www.cyh.io)",
   "version": "0.1.0",
-  "private": true,
+  "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.4.0",
     "clsx": "^1.0.4",
