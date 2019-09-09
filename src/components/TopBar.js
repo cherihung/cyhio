@@ -19,9 +19,13 @@ function _makeThemeStyles(key) {
     },
     checked: {},
     label: {
-      textTransform: 'uppercase',
-      fontSize: '10px',
-      color: '#272820'
+      display: 'none',
+      '@media (min-width:600px)': {
+        display: 'inline',
+        textTransform: 'uppercase',
+        fontSize: '10px',
+        color: '#272820',
+      },
     }
   })
 }
@@ -33,6 +37,7 @@ const useSocialStyles = makeStyles({
     justifyContent: 'space-between',
     minWidth: '8em',
     lineHeight: 0,
+    marginLeft: '0.5em',
   },
 })
 

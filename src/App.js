@@ -18,15 +18,16 @@ const useStyles = makeStyles({
     backgroundColor: '#bfbdac',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '0 1.5em 0 0.5em',
     position: 'fixed',
-    width: '100vw'
+    width: '100%'
   },
   baseWrapper: {
     paddingTop: '1em'
   },
   about: {
-    paddingBottom: '2em'
+    '@media (min-width:600px)': {
+      paddingBottom: '2em',
+    },
   }
 })
 

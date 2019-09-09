@@ -8,10 +8,14 @@ const useBaseStyles = makeStyles({
   },
   inner: {
     margin: '0 auto',
-    maxWidth: '800px',
+    width: '90vw',
     minWidth: '200px',
-    width: '80vw',
-    padding: '1em'
+    padding: '0.5em 0',
+    '@media (min-width:600px)': {
+      padding: '1em',
+      maxWidth: '800px',
+      width: '80vw',
+    },
   }
 })
 
