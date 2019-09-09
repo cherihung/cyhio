@@ -21,9 +21,11 @@ const useBaseStyles = makeStyles({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: theme.backgroundColor,
+    backgroundColor: theme.backgroundColor,
     color: theme.color,
-    minHeight: '100vh'
+    minHeight: '100vh',
+    // backgroundImage: theme.backgroundImage,
+    // animation: '900s scroll infinite linear',
   },
 }));
 
