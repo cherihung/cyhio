@@ -24,8 +24,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.backgroundColor,
     color: theme.color,
     minHeight: '100vh',
-    // backgroundImage: theme.backgroundImage,
-    // animation: '900s scroll infinite linear',
   },
 }));
 
