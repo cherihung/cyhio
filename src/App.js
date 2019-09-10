@@ -4,6 +4,7 @@ import About from 'components/About';
 import BaseWrapper from 'components/BaseWrapper';
 import BottomBadge from 'components/BottomBadge';
 import Resume from 'components/Resume';
+import ThemeSaver from 'components/ThemeSaver';
 import TopBar from 'components/TopBar';
 import React, { useState } from 'react';
 import ThemeMap from 'styles/themes';
@@ -18,8 +19,8 @@ const useStyles = makeStyles({
     backgroundColor: '#bfbdac',
     display: 'flex',
     justifyContent: 'space-between',
-    position: 'fixed',
-    width: '100%'
+    width: '100%',
+    padding: '5px 0'
   },
   baseWrapper: {
     paddingTop: '1em'
@@ -41,6 +42,7 @@ function App() {
       <CssBaseline />
       <TopBar className={appStyles.topBar} themeSetter={setClassName} themeName={theme.name} />
       <ThemeProvider theme={theme.theme} >
+        <ThemeSaver />
         <BaseWrapper className={appStyles.baseWrapper}>
           <About className={appStyles.about} />
           <Resume />

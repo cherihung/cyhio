@@ -4,7 +4,9 @@ const darkTheme = {
   emphasisTextColor: '#A9BFCC',
   emphasisLabelColor: '#636363',
   lightTextColor: '#a0a0a0',
-  dividerColor: '#a0a0a0'
+  dividerColor: '#a0a0a0',
+  successColor: '#006400',
+  alertColor: '#800000'
 }
 
 const brightTheme = {
@@ -13,7 +15,9 @@ const brightTheme = {
   emphasisTextColor: '#000000',
   emphasisLabelColor: '#8e8d8d',
   lightTextColor: '#706d6d',
-  dividerColor: '#706d6d'
+  dividerColor: '#706d6d',
+  successColor: '#8fbc8f',
+  alertColor: '#fa8072'
 }
 
 const solarizedLightTheme = {
@@ -22,7 +26,9 @@ const solarizedLightTheme = {
   emphasisTextColor: '#D33681',
   emphasisLabelColor: '#5FB2A7',
   lightTextColor: '#7b95a0',
-  dividerColor: '#B8BFB8'
+  dividerColor: '#B8BFB8',
+  successColor: '#8fbc8f',
+  alertColor: '#fa8072'
 }
 
 const monokaiTheme = {
@@ -32,6 +38,8 @@ const monokaiTheme = {
   emphasisLabelColor: '#EF296E',
   lightTextColor: '#b2a495',
   dividerColor: '#b2a495',
+  successColor: '#006400',
+  alertColor: '#800000'
 }
 
 const ThemeMap = {
