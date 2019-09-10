@@ -1,5 +1,5 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { makeStyles, ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import About from 'components/About';
 import BaseWrapper from 'components/BaseWrapper';
 import BottomBadge from 'components/BottomBadge';
@@ -7,30 +7,8 @@ import Resume from 'components/Resume';
 import ThemeSaver from 'components/ThemeSaver';
 import TopBar from 'components/TopBar';
 import React, { useState } from 'react';
+import { useStyles } from 'styles/app.style';
 import ThemeMap from 'styles/themes';
-
-
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  topBar: {
-    backgroundColor: '#bfbdac',
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '100%',
-    padding: '5px 0'
-  },
-  baseWrapper: {
-    paddingTop: '1em'
-  },
-  about: {
-    '@media (min-width:600px)': {
-      paddingBottom: '2em',
-    },
-  }
-})
 
 function App() {
 

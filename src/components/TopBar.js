@@ -1,5 +1,4 @@
 import Radio from '@material-ui/core/Radio';
-import { makeStyles } from '@material-ui/styles';
 import IconLink from 'components/IconLink';
 import githubLogo from 'images/github.svg';
 import linkedInLogo from 'images/linkedin.svg';
@@ -7,39 +6,7 @@ import twitterLogo from 'images/twitter.svg';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ThemeMap from 'styles/themes';
-
-function _makeThemeStyles(key) {
-  return makeStyles({
-    root: {
-      color: ThemeMap[key].theme.backgroundColor,
-      '&$checked': {
-        color: ThemeMap[key].theme.backgroundColor
-      },
-      padding: '3px'
-    },
-    checked: {},
-    label: {
-      display: 'none',
-      '@media (min-width:600px)': {
-        display: 'inline',
-        textTransform: 'uppercase',
-        fontSize: '10px',
-        color: '#272820',
-      },
-    }
-  })
-}
-
-const useSocialStyles = makeStyles({
-  root: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    minWidth: '8em',
-    lineHeight: 0,
-    marginLeft: '0.5em',
-  },
-})
+import { makeThemeStyles, useSocialStyles } from 'styles/topBar.style';
 
 const ThemeChoiceKeys = Object.keys(ThemeMap);
 
@@ -52,7 +19,7 @@ function TopBar(props) {
   let choiceStyles = {};
 
   ThemeChoiceKeys.map((theme) => 
-    choiceStyles[theme] = _makeThemeStyles(theme)(),
+    choiceStyles[theme] = makeThemeStyles(theme)(),
   );
 
   const handleChange = (event) => { 
