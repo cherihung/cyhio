@@ -1,14 +1,15 @@
 import { makeStyles } from '@material-ui/styles';
+import ThemeMap from 'styles/themes';
 
-export const useStyles = makeStyles((theme) => ({
+export const makeThemeStyles = (key) => makeStyles({
   root: {
     display: 'flex',
     alignItems: 'center',
     position: 'fixed',
     top: '4em',
     right: '1em',
-    backgroundColor: theme.color,
-    color: theme.backgroundColor,
+    backgroundColor: ThemeMap[key].theme.color,
+    color: ThemeMap[key].theme.backgroundColor,
     padding: '0.5em 0.5em 0 0.5em',
     borderRadius: '0.2em',
     fontSize: '0.8rem',
@@ -23,9 +24,9 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   iconYes: {
-    fill: theme.successColor
+    fill: ThemeMap[key].theme.successColor
   },
   iconNo: {
-    fill: theme.alertColor
+    fill: ThemeMap[key].theme.alertColor
   }
-}));
+});

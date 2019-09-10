@@ -65,5 +65,6 @@ const ThemeMap = {
   },
 }
 
+export const ThemeChoiceKeys = Object.keys(ThemeMap);
 
 export default ThemeMap

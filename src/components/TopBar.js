@@ -1,19 +1,19 @@
 import Radio from '@material-ui/core/Radio';
 import IconLink from 'components/IconLink';
+import ThemeSaver from 'components/ThemeSaver';
 import githubLogo from 'images/github.svg';
 import linkedInLogo from 'images/linkedin.svg';
 import twitterLogo from 'images/twitter.svg';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ThemeMap from 'styles/themes';
+import ThemeMap, { ThemeChoiceKeys } from 'styles/themes';
 import { makeThemeStyles, useSocialStyles } from 'styles/topBar.style';
-
-const ThemeChoiceKeys = Object.keys(ThemeMap);
 
 function TopBar(props) {
 
   const { className, themeSetter, themeName } = props;
-  const [selectedValue, setSelectedValue] = React.useState(themeName);
+  const [ selectedValue, setSelectedValue ] = React.useState(themeName);
+  const [ saverOn, setSaver ] = React.useState(false)
   const socialStyles = useSocialStyles();
   
   let choiceStyles = {};
@@ -25,6 +25,7 @@ function TopBar(props) {
   const handleChange = (event) => { 
     const value = event.target.value;
     setSelectedValue(value)
+    setSaver(true)
     themeSetter(ThemeMap[value])
   };
 
@@ -60,6 +61,7 @@ function TopBar(props) {
         </IconLink>
       </div>
       <div>{themeRadioChoices}</div>
+      <ThemeSaver on={saverOn} themeName={themeName} setter={setSaver} />
     </div>
   )
 }
