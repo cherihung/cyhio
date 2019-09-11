@@ -3,10 +3,12 @@ import { ReactComponent as CancelIcon } from 'images/cancel.svg';
 import { ReactComponent as CheckIcon } from 'images/checkmark.svg';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { saveUserTheme } from 'service/userTheme.service';
 import { ThemeChoiceKeys } from 'styles/themes';
 
 import { makeThemeStyles } from './styles';
 
+// import { saveUserTheme } from 'service/userTheme.service';
 function ThemeSaver({on, themeName, setter}) {
 
   const styles = makeThemeStyles(themeName)();
@@ -14,7 +16,7 @@ function ThemeSaver({on, themeName, setter}) {
   const handleCancel = () => setter(false)
 
   const handleSave = () => {
-    // TODO: perform save
+    saveUserTheme(themeName)
     setter(false)
   }
 

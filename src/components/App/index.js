@@ -6,13 +6,13 @@ import BottomBadge from 'components/BottomBadge';
 import Resume from 'components/Resume';
 import TopBar from 'components/TopBar';
 import React, { useState } from 'react';
-import ThemeMap from 'styles/themes';
+import { getUserTheme } from 'service/userTheme.service';
 
 import { useStyles } from './style';
 
 function App() {
 
-  const [theme, setClassName] = useState(ThemeMap.monokai);
+  const [theme, setClassName] = useState(getUserTheme());
   const appStyles = useStyles();
 
   return (
