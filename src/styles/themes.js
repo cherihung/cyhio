@@ -66,5 +66,6 @@ const ThemeMap = {
 }
 
 export const ThemeChoiceKeys = Object.keys(ThemeMap);
+export const DarkThemes = (({ monokai, dark }) => ({monokai, dark}))(ThemeMap)
 
 export default ThemeMap

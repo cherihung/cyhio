@@ -7,7 +7,8 @@ import twitterLogo from 'images/twitter.svg';
 import PropTypes from 'prop-types';
 import React from 'react';
 import ThemeMap, { ThemeChoiceKeys } from 'styles/themes';
-import { makeThemeStyles, useSocialStyles } from 'styles/topBar.style';
+
+import { makeThemeStyles, useSocialStyles } from './styles';
 
 function TopBar(props) {
 

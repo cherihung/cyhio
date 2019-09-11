@@ -4,7 +4,8 @@ import { ReactComponent as CheckIcon } from 'images/checkmark.svg';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeChoiceKeys } from 'styles/themes';
-import { makeThemeStyles } from 'styles/themeSaver.style';
+
+import { makeThemeStyles } from './styles';
 
 function ThemeSaver({on, themeName, setter}) {
 

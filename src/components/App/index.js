@@ -6,8 +6,9 @@ import BottomBadge from 'components/BottomBadge';
 import Resume from 'components/Resume';
 import TopBar from 'components/TopBar';
 import React, { useState } from 'react';
-import { useStyles } from 'styles/app.style';
 import ThemeMap from 'styles/themes';
+
+import { useStyles } from './style';
 
 function App() {
 

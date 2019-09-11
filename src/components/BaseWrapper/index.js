@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
-import { useBaseStyles, useStyles } from 'styles/baseWrapper.style';
+
+import { useBaseStyles, useStyles } from './styles';
 
 function BaseWrapper({children, className}) {
 

@@ -1,7 +1,8 @@
-import ResumeSection from 'components/ResumeSection';
 import Education from 'data/ed.json';
 import Experience from 'data/exp.json';
 import React from 'react';
+
+import ResumeSection from './ResumeSection';
 
 
 function Resume({className}) {
