@@ -1,13 +1,8 @@
 import { makeStyles } from '@material-ui/styles';
-import ThemeMap, { DarkThemes } from 'styles/themes';
+import ThemeMap from 'styles/themes';
+import { isDarkTheme } from 'utils/color';
 
-function _isDarkTheme(key) {
-  const DarkThemeKeys = Object.keys(DarkThemes);
-  return DarkThemeKeys.includes(key) ? '1px 2px 4px rgba(113, 125, 135, .5)' : '1px 2px 4px rgba(36, 67, 91, .5)'
-}
-
-export const makeThemeStyles = (key) => { 
-  return makeStyles({
+export const makeThemeStyles = (key) => makeStyles({
   root: {
     display: 'flex',
     alignItems: 'center',
@@ -20,7 +15,7 @@ export const makeThemeStyles = (key) => {
     fontSize: '0.8rem',
     fontWeight: '500',
     flexDirection: 'column',
-    boxShadow: _isDarkTheme(key)
+    boxShadow: isDarkTheme(key) ? '1px 2px 4px rgba(113, 125, 135, .5)' : '1px 2px 4px rgba(36, 67, 91, .5)'
   },
   iconButton: {
     margin: '0 2px',
@@ -35,4 +30,4 @@ export const makeThemeStyles = (key) => {
   iconNo: {
     fill: ThemeMap[key].theme.alertColor
   }
-}) };
+});
