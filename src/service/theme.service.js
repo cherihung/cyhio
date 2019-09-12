@@ -4,22 +4,15 @@ const LOCAL_STORAGE_KEY = 'cyh_theme';
 
 export const getUserTheme = () => {
   const savedKey = localStorage.getItem(LOCAL_STORAGE_KEY);
-  let theme = ThemeMap.monokai;
-  if(savedKey) {
-    if(ThemeMap[savedKey]) {
-      theme = ThemeMap[savedKey]
-    }
-  }
-  return theme;
+  const key = getUserThemeKey(savedKey)
+
+  return ThemeMap[key]
 }
 
-export const getUserThemeKey = () => {
-  const savedKey = localStorage.getItem(LOCAL_STORAGE_KEY);
+export const getUserThemeKey = (savedKey) => {
   let defaultKey = Object.keys(ThemeMap.monokai);
-  if(savedKey) {
-    if(ThemeMap[savedKey]) {
-      return savedKey
-    }
+  if(savedKey && ThemeMap[savedKey]) {
+    return savedKey
   }
   return defaultKey;
 }
