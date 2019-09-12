@@ -9,15 +9,15 @@ import { makeThemeStyles } from './styles';
 
 function ThemeSaver() {
 
-  const { theme, initChange, finishChange } = useThemeContext();
+  const { theme, initChange, setThemeDone } = useThemeContext();
 
   const styles = makeThemeStyles(theme.name)();
 
-  const handleCancel = () => finishChange()
+  const handleCancel = () => setThemeDone()
 
   const handleSave = () => {
     saveUserThemeKey(theme.name);
-    finishChange();
+    setThemeDone();
   }
 
   return (

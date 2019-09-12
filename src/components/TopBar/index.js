@@ -18,7 +18,7 @@ function TopBar(props) {
   const socialStyles = useSocialStyles();
   let choiceStyles = {};
   
-  const { theme, changeTheme } = useThemeContext();
+  const { theme, setTheme } = useThemeContext();
 
   ThemeChoiceKeys.map((themeKey) => 
     choiceStyles[themeKey] = makeThemeStyles(themeKey)(),
@@ -26,7 +26,7 @@ function TopBar(props) {
 
   const handleChange = (event) => { 
     const value = event.target.value;
-    changeTheme(value);
+    setTheme(value);
   };
 
   const themeRadioChoices = ThemeChoiceKeys.map((themeKey) =>
