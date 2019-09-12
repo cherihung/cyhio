@@ -13,6 +13,21 @@ export const getUserTheme = () => {
   return theme;
 }
 
-export const saveUserTheme = (themeKey) => {
+export const getUserThemeKey = () => {
+  const savedKey = localStorage.getItem(LOCAL_STORAGE_KEY);
+  let defaultKey = Object.keys(ThemeMap.monokai);
+  if(savedKey) {
+    if(ThemeMap[savedKey]) {
+      return savedKey
+    }
+  }
+  return defaultKey;
+}
+
+export const saveUserThemeKey = (themeKey) => {
   localStorage.setItem(LOCAL_STORAGE_KEY, themeKey);
+}
+
+export const getThemeObject = (key) => {
+  return ThemeMap[key];
 }

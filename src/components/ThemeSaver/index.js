@@ -1,27 +1,27 @@
 import clsx from 'clsx';
+import { useThemeContext } from 'context/useThemeContext';
 import { ReactComponent as CancelIcon } from 'images/cancel.svg';
 import { ReactComponent as CheckIcon } from 'images/checkmark.svg';
-import PropTypes from 'prop-types';
 import React from 'react';
-import { saveUserTheme } from 'service/userTheme.service';
-import { ThemeChoiceKeys } from 'styles/themes';
+import { saveUserThemeKey } from 'service/theme.service';
 
 import { makeThemeStyles } from './styles';
 
-// import { saveUserTheme } from 'service/userTheme.service';
-function ThemeSaver({on, themeName, setter}) {
+function ThemeSaver() {
 
-  const styles = makeThemeStyles(themeName)();
+  const { theme, initChange, finishChange } = useThemeContext();
 
-  const handleCancel = () => setter(false)
+  const styles = makeThemeStyles(theme.name)();
+
+  const handleCancel = () => finishChange()
 
   const handleSave = () => {
-    saveUserTheme(themeName)
-    setter(false)
+    saveUserThemeKey(theme.name);
+    finishChange();
   }
 
   return (
-    on ?
+    initChange ?
     <div className={ styles.root }>
       <span>Save theme change?</span>
       <span>
@@ -30,12 +30,6 @@ function ThemeSaver({on, themeName, setter}) {
       </span>
     </div> : null
   )
-}
-
-ThemeSaver.prototype = {
-  on: PropTypes.bool.isRequired,
-  setter: PropTypes.func.isRequired,
-  themeName: PropTypes.oneOf(ThemeChoiceKeys).isRequired
 }
 
 export default ThemeSaver;

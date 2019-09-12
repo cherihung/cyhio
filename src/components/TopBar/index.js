@@ -1,6 +1,7 @@
 import Radio from '@material-ui/core/Radio';
 import IconLink from 'components/IconLink';
-import ThemeSaver from 'components/ThemeSaver';
+import ThemeSaver from 'components/ThemeSaver/';
+import { useThemeContext } from 'context/useThemeContext';
 import githubLogo from 'images/github.svg';
 import linkedInLogo from 'images/linkedin.svg';
 import twitterLogo from 'images/twitter.svg';
@@ -12,36 +13,36 @@ import { makeThemeStyles, useSocialStyles } from './styles';
 
 function TopBar(props) {
 
-  const { className, themeSetter, themeName } = props;
-  const [ selectedValue, setSelectedValue ] = React.useState(themeName);
-  const [ saverOn, setSaver ] = React.useState(false)
+
+  const { className } = props;
+
   const socialStyles = useSocialStyles();
   
+  const { theme, changeTheme } = useThemeContext();
+
   let choiceStyles = {};
 
-  ThemeChoiceKeys.map((theme) => 
-    choiceStyles[theme] = makeThemeStyles(theme)(),
+  ThemeChoiceKeys.map((themeKey) => 
+    choiceStyles[themeKey] = makeThemeStyles(themeKey)(),
   );
 
   const handleChange = (event) => { 
     const value = event.target.value;
-    setSelectedValue(value)
-    setSaver(true)
-    themeSetter(ThemeMap[value])
+    changeTheme(value);
   };
 
-  const themeRadioChoices = ThemeChoiceKeys.map((theme) =>
-    <React.Fragment key={theme}>
-      {selectedValue === ThemeMap[theme].name ? <label className={choiceStyles[theme].label}>{ThemeMap[theme].displayName}</label> : null}
+  const themeRadioChoices = ThemeChoiceKeys.map((themeKey) =>
+    <React.Fragment key={themeKey}>
+      {theme.name === ThemeMap[themeKey].name ? <label className={choiceStyles[themeKey].label}>{ThemeMap[themeKey].displayName}</label> : null}
       <Radio
-        checked={selectedValue === ThemeMap[theme].name}
+        checked={theme.name === ThemeMap[themeKey].name}
         onChange={handleChange}
-        value={ThemeMap[theme].name}
+        value={ThemeMap[themeKey].name}
         disableRipple={true}
         name="app-theme-selector"
         classes={{
-          root: choiceStyles[theme].root,
-          checked: choiceStyles[theme].checked
+          root: choiceStyles[themeKey].root,
+          checked: choiceStyles[themeKey].checked
         }}
       />
     </React.Fragment>
@@ -62,15 +63,13 @@ function TopBar(props) {
         </IconLink>
       </div>
       <div>{themeRadioChoices}</div>
-      <ThemeSaver on={saverOn} themeName={themeName} setter={setSaver} />
+      <ThemeSaver />
     </div>
   )
 }
 
 TopBar.propTypes = {
-  className: PropTypes.string.isRequired,
-  themeSetter: PropTypes.func.isRequired,
-  themeName: PropTypes.oneOf(ThemeChoiceKeys).isRequired
+  className: PropTypes.string.isRequired
 }
 
 export default TopBar;
