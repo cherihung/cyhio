@@ -1,6 +1,5 @@
 import Radio from '@material-ui/core/Radio';
 import IconLink from 'components/IconLink';
-import ThemeSaver from 'components/ThemeSaver/';
 import { useThemeContext } from 'context/useThemeContext';
 import githubLogo from 'images/github.svg';
 import linkedInLogo from 'images/linkedin.svg';
@@ -17,10 +16,9 @@ function TopBar(props) {
   const { className } = props;
 
   const socialStyles = useSocialStyles();
+  let choiceStyles = {};
   
   const { theme, changeTheme } = useThemeContext();
-
-  let choiceStyles = {};
 
   ThemeChoiceKeys.map((themeKey) => 
     choiceStyles[themeKey] = makeThemeStyles(themeKey)(),
@@ -63,7 +61,6 @@ function TopBar(props) {
         </IconLink>
       </div>
       <div>{themeRadioChoices}</div>
-      <ThemeSaver />
     </div>
   )
 }
