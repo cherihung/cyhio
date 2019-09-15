@@ -13,7 +13,7 @@ function Content({ appStyles }) {
   const { theme } = useThemeContext();
 
   return (
-    <React.Fragment>
+    <>
       <ThemeSaver />      
       <TopBar className={appStyles.topBar} />
       <ThemeProvider theme={theme.theme} >
@@ -27,7 +27,7 @@ function Content({ appStyles }) {
           </a>
         </BottomBadge>
       </ThemeProvider>
-    </React.Fragment>
+    </>
   )
 }
 
