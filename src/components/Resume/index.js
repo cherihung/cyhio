@@ -41,4 +41,6 @@ function Resume({className}) {
   )
 }
 
+Resume.displayName = "Resume";
+
 export default Resume;

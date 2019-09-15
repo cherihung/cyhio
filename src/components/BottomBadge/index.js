@@ -22,4 +22,6 @@ const BottomBadge = styled('div')(({
   }
 }));
 
+BottomBadge.displayName = "BottomBadge";
+
 export default BottomBadge

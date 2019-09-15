@@ -6,4 +6,6 @@ const IconLink = styled(`a`)({
   }
 })
 
+IconLink.displayName = "IconLink";
+
 export default IconLink

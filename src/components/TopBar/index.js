@@ -78,4 +78,6 @@ TopBar.propTypes = {
   className: PropTypes.string.isRequired
 }
 
+TopBar.displayName = "TopBar";
+
 export default TopBar;
