@@ -5,7 +5,7 @@ import React from 'react';
 import ResumeSection from './ResumeSection';
 
 
-function Resume({className}) {
+function Resume() {
 
   const educationList = Education.map((item) => 
       <div key={item.id}>
@@ -24,7 +24,7 @@ function Resume({className}) {
 );
 
   return (
-    <div className={className}>
+    <div>
       <ResumeSection>
         <h4>Related Experience</h4>
         {experienceList}

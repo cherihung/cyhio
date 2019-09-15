@@ -17,10 +17,21 @@ const StateContext = React.createContext();
 function reducer(state, action) {
   switch(action.type) {
     case STATES.INIT_CHANGE: {
-      return { 
-        ...state,
-        initChange: action.payload 
+      const prevState = state;
+      let newState = { ...state };
+      
+      // newState.theme = prevState.theme;
+      newState.initChange = !prevState.initChange
+
+      if(Object.is(newState.theme, prevState.theme)) {
+        console.log('same')
       }
+
+      return newState;
+      // return { 
+      //   ...state,
+      //   initChange: action.payload 
+      // }
     }
     case STATES.THEME: {
       const newTheme = getThemeObject(action.themeKey)

@@ -3,7 +3,6 @@ import About from 'components/About/';
 import BaseWrapper from 'components/BaseWrapper/';
 import BottomBadge from 'components/BottomBadge/';
 import Resume from 'components/Resume/';
-import ThemeSaver from 'components/ThemeSaver/';
 import TopBar from 'components/TopBar/';
 import { useThemeStateContext } from 'context/useThemeContext';
 import React from 'react';
@@ -13,12 +12,11 @@ function Content({ appStyles }) {
   const { theme } = useThemeStateContext();
 
   return (
-    <>
-      <ThemeSaver />      
+    <>     
       <TopBar className={appStyles.topBar} />
       <ThemeProvider theme={theme.theme} >
         <BaseWrapper className={appStyles.baseWrapper}>
-          <About className={appStyles.about} />
+          <About />
           <Resume />
         </BaseWrapper>
         <BottomBadge>
