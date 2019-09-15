@@ -31,4 +31,6 @@ function Content({ appStyles }) {
   )
 }
 
+Content.displayName = "Content";
+
 export default Content;

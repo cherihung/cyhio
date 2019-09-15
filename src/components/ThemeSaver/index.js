@@ -32,4 +32,6 @@ function ThemeSaver() {
   )
 }
 
+ThemeSaver.displayName = "ThemeSaver";
+
 export default ThemeSaver;

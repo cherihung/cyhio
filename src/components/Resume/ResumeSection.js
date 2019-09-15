@@ -25,4 +25,6 @@ const ResumeSection = styled('div')(({
   }
 }));
 
+ResumeSection.displayName = "ResumeSection";
+
 export default ResumeSection;

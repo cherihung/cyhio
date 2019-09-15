@@ -17,4 +17,6 @@ function BaseWrapper({children, className}) {
 
 }
 
+BaseWrapper.displayName = "BaseWrapper";
+
 export default BaseWrapper;
