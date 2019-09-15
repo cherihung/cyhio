@@ -1,33 +1,17 @@
 import { useContext } from 'react';
-import { getThemeObject } from 'service/theme.service';
 
-import { STATES, ThemeContext } from './theme/provider';
+import { DispatchContext, StateContext } from './theme/provider';
 
-const useThemeContext = () => {
-  const [state, setState] = useContext(ThemeContext);
+const useThemeStateContext = () => {
+  const state = useContext(StateContext);
 
-  function setTheme(key) {
-    const newTheme = getThemeObject(key);
-    setState(state => ({
-      ...state, 
-      [STATES.THEME]: newTheme,
-      [STATES.INIT_CHANGE]: true
-    }))
-  }
-
-  function setThemeDone() {
-    setState(state => ({
-      ...state,
-      [STATES.INIT_CHANGE]: false
-    }))
-  }
-
-
-  return {
-    ...state,
-    setTheme,
-    setThemeDone
-  }
+  return state
 };
 
-export { useThemeContext };
+const useThemeDispatchContext = () => {
+  const dispatch = useContext(DispatchContext)
+
+  return dispatch
+}
+
+export { useThemeDispatchContext, useThemeStateContext };

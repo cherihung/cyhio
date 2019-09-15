@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import { useThemeContext } from 'context/useThemeContext';
+import { STATES } from 'context/theme/provider';
+import { useThemeDispatchContext, useThemeStateContext } from 'context/useThemeContext';
 import { ReactComponent as CancelIcon } from 'images/cancel.svg';
 import { ReactComponent as CheckIcon } from 'images/checkmark.svg';
 import React from 'react';
@@ -9,15 +10,24 @@ import { makeThemeStyles } from './styles';
 
 function ThemeSaver() {
 
-  const { theme, initChange, setThemeDone } = useThemeContext();
+  const dispatch = useThemeDispatchContext();
+  const { theme, initChange } = useThemeStateContext();
 
   const styles = makeThemeStyles(theme.name)();
 
-  const handleCancel = () => setThemeDone()
+  const handleCancel = () => {
+    dispatch({
+      type: STATES.INIT_CHANGE,
+      payload: false,
+    })
+  }
 
   const handleSave = () => {
     saveUserThemeKey(theme.name);
-    setThemeDone();
+    dispatch({
+      type: STATES.INIT_CHANGE,
+      payload: false,
+    })
   }
 
   return (

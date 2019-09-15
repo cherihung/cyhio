@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { getUserTheme } from 'service/theme.service';
+import React, { useReducer } from 'react';
+import { getThemeObject, getUserTheme } from 'service/theme.service';
 
 const STATES = {
   INIT_CHANGE: 'initChange',
@@ -11,22 +11,47 @@ const defaultStates = {
   [STATES.THEME]: null,
 }
 
-const ThemeContext = React.createContext();
+const DispatchContext = React.createContext();
+const StateContext = React.createContext();
+
+function reducer(state, action) {
+  switch(action.type) {
+    case STATES.INIT_CHANGE: {
+      return { 
+        ...state,
+        initChange: action.payload 
+      }
+    }
+    case STATES.THEME: {
+      const newTheme = getThemeObject(action.themeKey)
+      return { 
+        ...state,
+        theme: newTheme 
+      }
+    }
+    default: {
+      throw new Error(`Unhandled action type: ${action.type}`)
+    }
+  }
+}
 
 const ThemeContextProvider = ({children}) => {
 
   const defaultTheme = getUserTheme();
-  
-  const [state, setState] = useState({
+  const initState = {
     ...defaultStates,
     theme: defaultTheme,
-  });
+  }
+  
+  const [state, dispatch] = useReducer(reducer, initState);
 
   return (
-    <ThemeContext.Provider value={[state, setState]}>
-      {children}
-    </ThemeContext.Provider>
+    <DispatchContext.Provider value={dispatch}>
+      <StateContext.Provider value={state}>
+        {children}
+      </StateContext.Provider>
+    </DispatchContext.Provider>
   );
 };
 
-export { ThemeContextProvider, ThemeContext, STATES };
+export { ThemeContextProvider, DispatchContext, StateContext, STATES };

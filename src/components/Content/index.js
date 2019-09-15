@@ -5,12 +5,12 @@ import BottomBadge from 'components/BottomBadge/';
 import Resume from 'components/Resume/';
 import ThemeSaver from 'components/ThemeSaver/';
 import TopBar from 'components/TopBar/';
-import { useThemeContext } from 'context/useThemeContext';
+import { useThemeStateContext } from 'context/useThemeContext';
 import React from 'react';
 
 function Content({ appStyles }) {
 
-  const { theme } = useThemeContext();
+  const { theme } = useThemeStateContext();
 
   return (
     <React.Fragment>

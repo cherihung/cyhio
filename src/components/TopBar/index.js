@@ -1,6 +1,7 @@
 import Radio from '@material-ui/core/Radio';
 import IconLink from 'components/IconLink';
-import { useThemeContext } from 'context/useThemeContext';
+import { STATES } from 'context/theme/provider';
+import { useThemeDispatchContext, useThemeStateContext } from 'context/useThemeContext';
 import githubLogo from 'images/github.svg';
 import linkedInLogo from 'images/linkedin.svg';
 import twitterLogo from 'images/twitter.svg';
@@ -18,7 +19,8 @@ function TopBar(props) {
   const socialStyles = useSocialStyles();
   let choiceStyles = {};
   
-  const { theme, setTheme } = useThemeContext();
+  const dispatch = useThemeDispatchContext();
+  const state = useThemeStateContext();
 
   ThemeChoiceKeys.map((themeKey) => 
     choiceStyles[themeKey] = makeThemeStyles(themeKey)(),
@@ -26,14 +28,21 @@ function TopBar(props) {
 
   const handleChange = (event) => { 
     const value = event.target.value;
-    setTheme(value);
+    dispatch({
+      type: STATES.THEME,
+      themeKey: value
+    })
+    dispatch({
+      type: STATES.INIT_CHANGE,
+      payload: true,
+    })
   };
 
   const themeRadioChoices = ThemeChoiceKeys.map((themeKey) =>
     <React.Fragment key={themeKey}>
-      {theme.name === ThemeMap[themeKey].name ? <label className={choiceStyles[themeKey].label}>{ThemeMap[themeKey].displayName}</label> : null}
+      {state.theme.name === ThemeMap[themeKey].name ? <label className={choiceStyles[themeKey].label}>{ThemeMap[themeKey].displayName}</label> : null}
       <Radio
-        checked={theme.name === ThemeMap[themeKey].name}
+        checked={state.theme.name === ThemeMap[themeKey].name}
         onChange={handleChange}
         value={ThemeMap[themeKey].name}
         disableRipple={true}
