@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { getUserTheme } from 'service/theme.service';
 
 const STATES = {
-  INIT_CHANGE: 'initChange',
   THEME: 'theme',
 }
 
 const defaultStates = {
-  [STATES.INIT_CHANGE]: false,
   [STATES.THEME]: null,
 }
 

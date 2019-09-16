@@ -11,14 +11,6 @@ const useThemeContext = () => {
     setState(state => ({
       ...state, 
       [STATES.THEME]: newTheme,
-      [STATES.INIT_CHANGE]: true
-    }))
-  }
-
-  function setThemeDone() {
-    setState(state => ({
-      ...state,
-      [STATES.INIT_CHANGE]: false
     }))
   }
 
@@ -26,7 +18,6 @@ const useThemeContext = () => {
   return {
     ...state,
     setTheme,
-    setThemeDone
   }
 };
 
