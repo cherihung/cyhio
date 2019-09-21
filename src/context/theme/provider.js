@@ -11,9 +11,9 @@ const ThemeContext = React.createContext();
 const ThemeContextProvider = ({children}) => {
 
   const defaultTheme = getUserTheme();
-  
+
   const [state, setState] = useImmer({
-    [STATES.THEME]: defaultTheme,
+    theme: defaultTheme,
   });
 
   return (
