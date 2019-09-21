@@ -9,13 +9,22 @@ const useThemeContext = () => {
   function setTheme(key) {
     const newTheme = getThemeObject(key);
     setState(draft => {
-      draft[STATES.THEME] = newTheme
+      draft[STATES.THEME] = newTheme;
+      draft[STATES.INIT_CHANGE] = true;
     })
   }
+
+  function setThemeDone() {
+    setState(draft => {
+      draft[STATES.INIT_CHANGE] = false;
+    })
+  }
+  
 
   return {
     ...state,
     setTheme,
+    setThemeDone,
   }
 };
 

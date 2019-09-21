@@ -3,6 +3,7 @@ import { getUserTheme } from 'service/theme.service';
 import { useImmer } from 'use-immer';
 
 const STATES = {
+  INIT_CHANGE: 'initChange',
   THEME: 'theme',
 }
 
@@ -13,6 +14,7 @@ const ThemeContextProvider = ({children}) => {
   const defaultTheme = getUserTheme();
 
   const [state, setState] = useImmer({
+    [STATES.INIT_CHANGE]: false,
     [STATES.THEME]: defaultTheme,
   });
 
