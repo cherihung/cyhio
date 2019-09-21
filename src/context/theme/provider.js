@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getUserTheme } from 'service/theme.service';
+import { useImmer } from 'use-immer';
 
 const STATES = {
   THEME: 'theme',
-}
-
-const defaultStates = {
-  [STATES.THEME]: null,
 }
 
 const ThemeContext = React.createContext();
@@ -15,9 +12,8 @@ const ThemeContextProvider = ({children}) => {
 
   const defaultTheme = getUserTheme();
   
-  const [state, setState] = useState({
-    ...defaultStates,
-    theme: defaultTheme,
+  const [state, setState] = useImmer({
+    [STATES.THEME]: defaultTheme,
   });
 
   return (

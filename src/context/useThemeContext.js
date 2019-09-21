@@ -8,10 +8,9 @@ const useThemeContext = () => {
 
   function setTheme(key) {
     const newTheme = getThemeObject(key);
-    setState(state => ({
-      ...state, 
-      [STATES.THEME]: newTheme,
-    }))
+    setState(draft => {
+      draft[STATES.THEME] = newTheme
+    })
   }
 
 
