@@ -13,7 +13,6 @@ const useThemeContext = () => {
     })
   }
 
-
   return {
     ...state,
     setTheme,

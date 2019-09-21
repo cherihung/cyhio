@@ -13,7 +13,7 @@ const ThemeContextProvider = ({children}) => {
   const defaultTheme = getUserTheme();
 
   const [state, setState] = useImmer({
-    theme: defaultTheme,
+    [STATES.THEME]: defaultTheme,
   });
 
   return (
