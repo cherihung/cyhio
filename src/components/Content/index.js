@@ -11,10 +11,16 @@ function Content({ appStyles }) {
 
   const { theme } = useThemeStateContext();
 
+  const SiteThemeProvider = React.memo((props) => {
+    return(<ThemeProvider theme={props.theme} >
+      {props.children}
+    </ThemeProvider>)
+  })
+
   return (
     <>     
       <TopBar className={appStyles.topBar} />
-      <ThemeProvider theme={theme.theme} >
+      <SiteThemeProvider theme={theme.theme} >
         <BaseWrapper className={appStyles.baseWrapper}>
           <About />
           <Resume />
@@ -24,7 +30,7 @@ function Content({ appStyles }) {
             SOURCE CODE
           </a>
         </BottomBadge>
-      </ThemeProvider>
+      </SiteThemeProvider>
     </>
   )
 }

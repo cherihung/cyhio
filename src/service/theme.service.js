@@ -1,24 +1,25 @@
-import ThemeMap from 'styles/themes';
+import ThemeMap, { DEFAULT_THEME } from 'styles/themes';
 
 const LOCAL_STORAGE_KEY = 'cyh_theme';
 
 export const getUserTheme = () => {
   const savedKey = localStorage.getItem(LOCAL_STORAGE_KEY);
-  const key = getUserThemeKey(savedKey)
+  const userTheme = getThemeObject(savedKey);
 
-  return ThemeMap[key]
-}
-
-export const getUserThemeKey = (savedKey) => {
-  let defaultKey = Object.keys(ThemeMap.monokai);
-  if(savedKey && ThemeMap[savedKey]) {
-    return savedKey
+  if (!userTheme) {
+    clearUserThemeKey();
+    return DEFAULT_THEME;
   }
-  return defaultKey;
+  
+  return userTheme;
 }
 
 export const saveUserThemeKey = (themeKey) => {
   localStorage.setItem(LOCAL_STORAGE_KEY, themeKey);
+}
+
+export const clearUserThemeKey = () => {
+  localStorage.removeItem(LOCAL_STORAGE_KEY);
 }
 
 export const getThemeObject = (key) => {

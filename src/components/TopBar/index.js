@@ -80,4 +80,4 @@ TopBar.propTypes = {
 
 TopBar.displayName = "TopBar";
 
-export default TopBar;
+export default React.memo(TopBar);

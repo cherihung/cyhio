@@ -5,10 +5,13 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.4.0",
+    "@welldone-software/why-did-you-render": "^3.3.5",
     "clsx": "^1.0.4",
+    "immer": "^4.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "use-immer": "^0.3.4"
   },
   "devDependencies": {
     "eslint-plugin-import": "^2.18.2"
