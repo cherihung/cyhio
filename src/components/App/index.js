@@ -6,14 +6,6 @@ import React from 'react';
 
 import { useStyles } from './style';
 
-if (process.env.NODE_ENV !== 'production') {
-  const whyDidYouRender = require('@welldone-software/why-did-you-render');
-  whyDidYouRender(React, {
-    onlyLogs: true,
-    include: [/^Resume/]
-  });
-}
-
 function App() {
 
   const appStyles = useStyles();
