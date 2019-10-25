@@ -28,7 +28,7 @@ export const useSocialStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    minWidth: '8em',
+    minWidth: '10em',
     lineHeight: 0,
     marginLeft: '0.5em',
   },
