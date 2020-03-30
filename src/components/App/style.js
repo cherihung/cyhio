@@ -17,7 +17,7 @@ export const useStyles = makeStyles({
   },
   about: {
     '@media (min-width:600px)': {
-      paddingBottom: '2em',
+      paddingBottom: '1em',
     },
   }
 })

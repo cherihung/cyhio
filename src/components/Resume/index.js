@@ -35,7 +35,7 @@ function Resume({className}) {
       </ResumeSection>
       <ResumeSection>
         <h4>Skills</h4>
-        <p>Javascript/Typescript, React, Angular, AngularJS, Backbone, CSS-in-JS, CSS3, SASS, NodeJS, GraphQL, AWS, Jenkins, Docker, MySQL, MongoDB, DynamoDB, Selenium, WebdriverIO, Puppeteer</p>
+        <p>Javascript/Typescript, React, Angular, NodeJS, GraphQL, Kafka, AWS, Jenkins, Docker, MySQL, DynamoDB, AngularJS, CSS-in-JS, CSS3, SASS, Selenium, WebdriverIO</p>
       </ResumeSection>
     </div>
   )
