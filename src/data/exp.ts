@@ -1,4 +1,13 @@
-[
+export type experienceItem = {
+  id: string;
+  company: string;
+  title: string;
+  dates: string;
+  location: string;
+  description: string;
+}
+
+const experience: experienceItem[] = [
   {
     "id": "cap1",
     "company": "Capital One",
@@ -24,3 +33,5 @@
     "description": "Designed and implemented UI and analytics capabilities for the publication’s flagship website and mobile application. Directed and executed data visualization, multimedia and information projects."
   }
 ]
+
+export default experience;

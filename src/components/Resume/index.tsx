@@ -1,13 +1,12 @@
-import Education from 'data/ed.json';
-import Experience from 'data/exp.json';
+import Education, { educationItem } from 'data/ed';
+import Experience, { experienceItem } from 'data/exp';
 import React from 'react';
 
 import ResumeSection from './ResumeSection';
 
-
 function Resume({className}) {
 
-  const educationList = Education.map((item) => 
+  const educationList = Education.map((item: educationItem) => 
       <div key={item.id}>
         <h3>{item.school} &mdash; <i>{item.degree}</i></h3>
         <span>{item.dates} | {item.location}</span>
@@ -15,7 +14,7 @@ function Resume({className}) {
       </div>
   );
 
-  const experienceList = Experience.map((item) => 
+  const experienceList = Experience.map((item: experienceItem) => 
   <div key={item.id}>
     <h3>{item.company} &mdash; <i>{item.title}</i></h3>
     <span>{item.dates} | {item.location}</span>
@@ -35,7 +34,7 @@ function Resume({className}) {
       </ResumeSection>
       <ResumeSection>
         <h4>Skills</h4>
-        <p>Javascript/Typescript, React, Angular, NodeJS, GraphQL, Kafka, AWS, Jenkins, Docker, MySQL, DynamoDB, ElasticSearch, AngularJS, CSS-in-JS, CSS3, SASS, Selenium, WebdriverIO</p>
+        <p>Javascript/Typescript, React, NodeJS, GraphQL, Kafka, AWS, Jenkins, Docker, Cassandra, MySQL, ElasticSearch, Angular, AngularJS, CSS-in-JS, CSS3, SASS, Selenium, WebdriverIO</p>
       </ResumeSection>
     </div>
   )

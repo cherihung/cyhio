@@ -14,9 +14,9 @@ function About({className}) {
     <div className={className}>
       <H1>Chienyi <span>Cheri Hung</span></H1>
       <p>
-      Full-stack engineer and tech lead with experience in managing software development through its full lifecycle. Specializes in front-end engineering with a UX/UI focus and backend-end Node development. 
+      Full-stack engineer and tech lead with experience in managing software development through its full lifecycle. Specializes in full Javascript stack with React and Node.  
       </p>
-      <p>I love learning. Currently, I am leveling up on GO!</p>
+      <p>Currently, enjoying working on challenges with scalability and a distributed architecture.</p>
     </div>
   )
 }

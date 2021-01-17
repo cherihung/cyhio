@@ -1,4 +1,13 @@
-[
+export type educationItem = {
+  id: string;
+  school: string;
+  degree: string;
+  dates: string;
+  location: string;
+  description: string;
+}
+
+const education: educationItem[] = [
   {
     "id": "umd",
     "school": "University of Maryland",
@@ -16,3 +25,5 @@
     "description": "Capstone: E-Commerce Interface and Order Management System \n Areas of Concentration: Database-driven interface design"
   }
 ]
+
+export default education;
