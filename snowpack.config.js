@@ -29,6 +29,9 @@ module.exports = {
     out: 'build',
     clean: true
   },
+  testOptions: {
+    files: ['src/**/*.test.*']
+  },
   alias: {
     "@app": "./src/",
   }

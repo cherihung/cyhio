@@ -7,7 +7,8 @@
     "start": "snowpack dev --reload",
     "build": "snowpack build",
     "serve-prod": "npx serve -s build",
-    "test": "web-test-runner \"src/**/*.test.tsx\"",
+    "test": "npx web-test-runner \"src/**/*.test.jsx\"",
+    "test-watch": "npx web-test-runner \"src/**/*.test.tsx\"  --node-resolve--watch",
     "release": "yarn build && ./release.sh"
   },
   "dependencies": {
@@ -33,7 +34,6 @@
     "@types/snowpack-env": "^2.3.2",
     "@web/test-runner": "^0.12.0",
     "chai": "^4.2.0",
-    "eslint-config-react-app": "^6.0.0",
     "serve": "^11.3.2",
     "snowpack": "^3.0.1",
     "snowpack-plugin-svgr": "^0.1.2",
