@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles';
-import ThemeMap from 'styles/themes';
+import ThemeMap from '@app/styles/themes';
 
 export const makeThemeStyles = (key) => {
   return makeStyles({

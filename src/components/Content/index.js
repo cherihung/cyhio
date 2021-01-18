@@ -1,9 +1,9 @@
 import { ThemeProvider } from '@material-ui/styles';
-import About from 'components/About/';
-import BaseWrapper from 'components/BaseWrapper/';
-import BottomBadge from 'components/BottomBadge/';
-import Resume from 'components/Resume/';
-import { useThemeContext } from 'context/useThemeContext';
+import About from '@app/components/About/';
+import BaseWrapper from '@app/components/BaseWrapper/';
+import BottomBadge from '@app/components/BottomBadge/';
+import Resume from '@app/components/Resume/';
+import { useThemeContext } from '@app/context/useThemeContext';
 import React from 'react';
 
 function Content({ appStyles }) {

@@ -1,5 +1,5 @@
-import Education, { educationItem } from 'data/ed';
-import Experience, { experienceItem } from 'data/exp';
+import Education, { educationItem } from '@app/data/ed';
+import Experience, { experienceItem } from '@app/data/exp';
 import React from 'react';
 
 import ResumeSection from './ResumeSection';

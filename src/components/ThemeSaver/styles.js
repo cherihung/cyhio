@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
-import ThemeMap from 'styles/themes';
-import { isDarkTheme } from 'styles/utils';
+import ThemeMap from '@app/styles/themes';
+import { isDarkTheme } from '@app/styles/utils';
 
 export const makeThemeStyles = (key) => makeStyles({
   root: {

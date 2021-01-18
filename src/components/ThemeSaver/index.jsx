@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import { useThemeContext } from 'context/useThemeContext';
-import { ReactComponent as CancelIcon } from 'images/cancel.svg';
-import { ReactComponent as CheckIcon } from 'images/checkmark.svg';
+import { useThemeContext } from '@app/context/useThemeContext';
+import CancelIcon from '@app/images/cancel.svg';
+import CheckIcon from '@app/images/checkmark.svg';
 import React from 'react';
-import { saveUserThemeKey } from 'service/theme.service';
+import { saveUserThemeKey } from '@app/service/theme.service';
 
 import { makeThemeStyles } from './styles';
 
