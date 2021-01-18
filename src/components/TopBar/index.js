@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+import React from 'react';
 import Radio from '@material-ui/core/Radio';
 import IconLink from '@app/components/IconLink';
 import { useThemeContext } from '@app/context/useThemeContext';
@@ -5,8 +7,6 @@ import githubLogo from '@app/images/github.svg';
 import linkedInLogo from '@app/images/linkedin.svg';
 import mediumLogo from '@app/images/medium.svg';
 import twitterLogo from '@app/images/twitter.svg';
-import PropTypes from 'prop-types';
-import React from 'react';
 import ThemeMap, { ThemeChoiceKeys } from '@app/styles/themes';
 
 import { makeThemeStyles, useSocialStyles } from './styles';
