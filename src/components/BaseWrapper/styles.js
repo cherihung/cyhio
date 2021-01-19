@@ -1,26 +1,20 @@
-import { makeStyles } from '@material-ui/styles';
+import styled from 'styled-components';
 
-export const useBaseStyles = makeStyles({
-  root: {
-    fontSize: 14,
-  },
-  inner: {
-    margin: '0 auto',
-    width: '90vw',
-    minWidth: '200px',
-    padding: '0.5em 0',
-    '@media (min-width:600px)': {
-      padding: '1em',
-      maxWidth: '800px',
-      width: '80vw',
-    },
+export const StyledBaseInner = styled.div`
+  margin: 0 auto;
+  width: 90vw;
+  min-width: 200px;
+  padding: 0.5em 0;
+  @media (min-width:600px) {
+    padding: 1em;
+    max-width: 800px;
+    width: 80vw;
   }
-})
-
-export const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.backgroundColor,
-    color: theme.color,
-    minHeight: '100vh',
-  },
-}));
+`
+export const StyledBaseWrapper = styled.div`
+  font-size: 14px;
+  background-color: ${({ theme }) => theme.backgroundColor };
+  color: ${({theme}) => theme.color};
+  min-height: 100vh;
+  padding-top: 1em
+`

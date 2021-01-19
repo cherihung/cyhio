@@ -1,12 +1,12 @@
-import Education, { educationItem } from '@app/data/ed';
-import Experience, { experienceItem } from '@app/data/exp';
+import Education from '@app/data/ed';
+import Experience from '@app/data/exp';
 import React from 'react';
 
 import ResumeSection from './ResumeSection';
 
-function Resume({className}) {
+function Resume() {
 
-  const educationList = Education.map((item: educationItem) => 
+  const educationList = Education.map((item) => 
       <div key={item.id}>
         <h3>{item.school} &mdash; <i>{item.degree}</i></h3>
         <span>{item.dates} | {item.location}</span>
@@ -14,7 +14,7 @@ function Resume({className}) {
       </div>
   );
 
-  const experienceList = Experience.map((item: experienceItem) => 
+  const experienceList = Experience.map((item) => 
   <div key={item.id}>
     <h3>{item.company} &mdash; <i>{item.title}</i></h3>
     <span>{item.dates} | {item.location}</span>
@@ -23,7 +23,7 @@ function Resume({className}) {
 );
 
   return (
-    <div className={className}>
+    <div>
       <ResumeSection>
         <h4>Related Experience</h4>
         {experienceList}

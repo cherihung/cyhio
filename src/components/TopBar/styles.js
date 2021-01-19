@@ -1,35 +1,37 @@
-import { makeStyles } from '@material-ui/styles';
-import ThemeMap from '@app/styles/themes';
+import styled from 'styled-components';
 
-export const makeThemeStyles = (key) => {
-  return makeStyles({
-    root: {
-      color: ThemeMap[key].theme.backgroundColor,
-      '&$checked': {
-        color: ThemeMap[key].theme.backgroundColor
-      },
-      padding: '3px'
-    },
-    checked: {},
-    label: {
-      display: 'none',
-      '@media (min-width:600px)': {
-        display: 'inline',
-        textTransform: 'uppercase',
-        fontSize: '10px',
-        color: '#272820',
-      },
+export const StyledTopBar = styled.div`
+  background-color: #bfbdac;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.25em 0;
+  .radioGroup {
+    .MuiRadio-root  {
+      color: ${props => props.theme.backgroundColor};
+      padding: 0.1em;
     }
-  })
-}
+    .Mui-checked {
+      color: ${props => props.theme.backgroundColor};
+    }
+  }
+`
 
-export const useSocialStyles = makeStyles({
-  root: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    minWidth: '10em',
-    lineHeight: 0,
-    marginLeft: '0.5em',
-  },
-})
+export const StyledLabel = styled.label`
+  display: none;
+  @media (min-width: 600px) {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: #272820
+  }
+`
+
+export const StyledSocialBar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 10em;
+  line-height: 0;
+  margin-left: 0.5em;
+`

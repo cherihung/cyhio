@@ -1,6 +1,6 @@
-import { styled } from '@material-ui/styles';
+import styled from 'styled-components';
 
-const BottomBadge = styled('div')(({
+const BottomBadge = styled.div(({
   theme
 }) => ({
   position: 'fixed',

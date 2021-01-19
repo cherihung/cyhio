@@ -5,21 +5,19 @@ import TopBar from '@app/components/TopBar/';
 import { ThemeContextProvider } from '@app/context/theme/provider';
 import React from 'react';
 
-import { useStyles } from './style';
+import { StyledAppRoot } from './style';
 
 function App() {
 
-  const appStyles = useStyles();
-
   return (
-    <div className={appStyles.root}>
+    <StyledAppRoot>
       <CssBaseline />
       <ThemeContextProvider>
         <ThemeSaver /> 
-        <TopBar className={appStyles.topBar} />
-        <Content appStyles={appStyles} />
+        <TopBar />
+        <Content />
       </ThemeContextProvider>
-    </div>
+    </StyledAppRoot>
   );
 }
 

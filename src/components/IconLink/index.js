@@ -1,10 +1,10 @@
-import { styled } from '@material-ui/styles';
+import styled from 'styled-components';
 
-const IconLink = styled(`a`)({
-  '&:hover': {
-    opacity: '0.7'
+const IconLink = styled.a`
+  &:hover {
+    opacity: 0.7
   }
-})
+`
 
 IconLink.displayName = "IconLink";
 

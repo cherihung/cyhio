@@ -1,33 +1,30 @@
-import { makeStyles } from '@material-ui/styles';
-import ThemeMap from '@app/styles/themes';
-import { isDarkTheme } from '@app/styles/utils';
+import styled from 'styled-components';
+import { isDarkTheme } from 'styles/utils';
 
-export const makeThemeStyles = (key) => makeStyles({
-  root: {
-    display: 'flex',
-    alignItems: 'center',
-    position: 'fixed',
-    top: '4em',
-    right: '1em',
-    backgroundColor: ThemeMap[key].theme.color,
-    color: ThemeMap[key].theme.backgroundColor,
-    padding: '0.5em 0.5em 0 0.5em',
-    fontSize: '0.8rem',
-    fontWeight: '500',
-    flexDirection: 'column',
-    boxShadow: isDarkTheme(key) ? '1px 2px 4px rgba(113, 125, 135, .5)' : '1px 2px 4px rgba(36, 67, 91, .5)'
-  },
-  iconButton: {
-    margin: '0 2px',
-    cursor: 'pointer',
-    '& :hover': {
-      fill: 'gray'
+export const StyledThemeSaverBox = styled.div`
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 4em;
+  right: 1em;
+  background-color: ${props => props.theme.color};
+  color: ${props => props.theme.backgroundColor};
+  padding: 0.5em 0.5em 0 0.5em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  flex-direction: column;
+  box-shadow: ${props => isDarkTheme(props.themeName) ? '1px 2px 4px rgba(113, 125, 135, .5)' : '1px 2px 4px rgba(36, 67, 91, .5)'};
+  .iconButton {
+    margin: 0 2px;
+    cursor: pointer;
+    &:hover {
+      fill: gray
     }
-  },
-  iconYes: {
-    fill: ThemeMap[key].theme.successColor
-  },
-  iconNo: {
-    fill: ThemeMap[key].theme.alertColor
   }
-});
+  .iconYes {
+    fill: ${props => props.theme.successColor}
+  }
+  .iconNo {
+    fill: ${props => props.theme.alertColor}
+  }
+`

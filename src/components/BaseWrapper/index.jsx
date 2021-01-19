@@ -1,18 +1,13 @@
-import clsx from 'clsx';
 import React from 'react';
 
-import { useBaseStyles, useStyles } from './styles';
+import { StyledBaseInner, StyledBaseWrapper } from './styles';
 
-function BaseWrapper({children, className}) {
-
-  const baseStyles = useBaseStyles();
-  const styles = useStyles();
-  const componentStyles = clsx(styles.root, baseStyles.root, className);
-  
+function BaseWrapper({children}) {
+ 
   return (
-    <div className={componentStyles}>
-      <div className={baseStyles.inner}>{children}</div>
-    </div>
+    <StyledBaseWrapper>
+      <StyledBaseInner>{children}</StyledBaseInner>
+    </StyledBaseWrapper>
   )
 
 }
