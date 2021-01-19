@@ -1,22 +1,30 @@
 import styled from 'styled-components';
-import Radio from '@material-ui/core/Radio';
+
+export const StyledTopBar = styled.div`
+  background-color: #bfbdac;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.25em 0;
+  .radioGroup {
+    .MuiRadio-root  {
+      color: ${props => props.theme.backgroundColor};
+      padding: 0.1em;
+    }
+    .Mui-checked {
+      color: ${props => props.theme.backgroundColor};
+    }
+  }
+`
 
 export const StyledLabel = styled.label`
   display: none;
   @media (min-width: 600px) {
     display: inline;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 0.75em;
     color: #272820
   }
-`
-
-export const StyledRadio = styled(Radio)`
-  color: ${props => props.theme.backgroundColor};
-  &.Mui-checked {
-    color: ${props => props.theme.backgroundColor};
-  };
-  padding: 3px;
 `
 
 export const StyledSocialBar = styled.div`

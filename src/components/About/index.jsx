@@ -8,16 +8,22 @@ const H1 = styled.h1`
   }
 `;
 
-function About({className}) {
+const StyledAbout = styled.div`
+  @media (min-width:600px) {
+    padding-bottom: 1em
+  }
+`
+
+function About() {
 
   return(
-    <div className={className}>
+    <StyledAbout>
       <H1>Chienyi <span>Cheri Hung</span></H1>
       <p>
       Full-stack engineer and tech lead with experience in managing software development through its full lifecycle. Specializes in full Javascript stack with React and Node.  
       </p>
       <p>Currently, enjoying working on challenges with scalability and a distributed architecture.</p>
-    </div>
+    </StyledAbout>
   )
 }
 

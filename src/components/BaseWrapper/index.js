@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { StyledBaseInner, StyledBaseRoot } from './styles';
+import { StyledBaseInner, StyledBaseWrapper } from './styles';
 
 function BaseWrapper({children}) {
  
   return (
-    <StyledBaseRoot>
+    <StyledBaseWrapper>
       <StyledBaseInner>{children}</StyledBaseInner>
-    </StyledBaseRoot>
+    </StyledBaseWrapper>
   )
 
 }

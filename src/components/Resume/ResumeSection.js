@@ -4,22 +4,22 @@ const ResumeSection = styled.div(({
   theme
 }) => ({
   marginBottom: '3em',
-  '& >div': {
+  '>div': {
     borderBottom: `1px dashed ${theme.dividerColor}`,
   },
-  '& h3': {
+  'h3': {
     color: theme.emphasisTextColor,
     marginBottom: '0'
   },
-  '& h4': {
+  'h4': {
     color: theme.emphasisLabelColor,
     textTransform: 'uppercase'
   },
-  '& p': {
+  'p': {
     whiteSpace: 'pre-line',
     marginTop: '0.5em'
   },
-  '& span': {
+  'span': {
     fontSize: '0.9em',
     color: theme.lightTextColor
   }

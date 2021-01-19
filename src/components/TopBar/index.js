@@ -4,19 +4,15 @@ import githubLogo from 'images/github.svg';
 import linkedInLogo from 'images/linkedin.svg';
 import mediumLogo from 'images/medium.svg';
 import twitterLogo from 'images/twitter.svg';
-import PropTypes from 'prop-types';
 import React from 'react';
 import ThemeMap, { ThemeChoiceKeys } from 'styles/themes';
+import Radio from '@material-ui/core/Radio';
 
-import { StyledSocialBar, StyledRadio, StyledLabel } from './styles';
+import { StyledSocialBar, StyledLabel, StyledTopBar } from './styles';
 
-function TopBar(props) {
-
-
-  const { className } = props;
+function TopBar() {
 
   const { theme, setTheme } = useThemeContext();
-
   const handleChange = (event) => { 
     const value = event.target.value;
     setTheme(value);
@@ -24,19 +20,18 @@ function TopBar(props) {
   const themeRadioChoices = ThemeChoiceKeys.map((themeKey) =>
     <React.Fragment key={themeKey}>
       {theme.name === ThemeMap[themeKey].name && <StyledLabel>{ThemeMap[themeKey].displayName}</StyledLabel>}
-      <StyledRadio
+      <Radio
         checked={theme.name === ThemeMap[themeKey].name}
         onChange={handleChange}
         value={ThemeMap[themeKey].name}
         disableRipple={true}
         name="app-theme-selector"
-        theme={theme.theme}
       />
     </React.Fragment>
   )
 
   return (
-    <div className={className}>
+    <StyledTopBar theme={theme.theme}>
       <StyledSocialBar>
         <div><strong>cyh.io</strong></div>
         <IconLink href="https://github.com/cherihung" target="_blank" rel="noopener noreferrer" title="Github">
@@ -52,13 +47,9 @@ function TopBar(props) {
           <img src={linkedInLogo} height="20px" alt="LinkedIn" />
         </IconLink>
       </StyledSocialBar>
-      <div>{themeRadioChoices}</div>
-    </div>
+      <div className={'radioGroup'}>{themeRadioChoices}</div>
+    </StyledTopBar>
   )
-}
-
-TopBar.propTypes = {
-  className: PropTypes.string.isRequired
 }
 
 TopBar.displayName = "TopBar";

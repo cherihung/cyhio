@@ -4,7 +4,7 @@ import { ReactComponent as CheckIcon } from 'images/checkmark.svg';
 import React from 'react';
 import { saveUserThemeKey } from 'service/theme.service';
 
-import { ThemeSaverBox } from './styles';
+import { StyledThemeSaverBox } from './styles';
 
 function ThemeSaver() {
 
@@ -19,13 +19,13 @@ function ThemeSaver() {
 
   return (
     initChange &&
-    <ThemeSaverBox theme={theme.theme} themeName={theme.name}>
+    <StyledThemeSaverBox theme={theme.theme} themeName={theme.name}>
       <span>Save theme change?</span>
       <span>
         <CheckIcon onClick={ handleSave } alt="Yes" className="iconButton iconYes" />
         <CancelIcon onClick={ handleCancel } alt="No" className="iconButton iconNo" />
       </span>
-    </ThemeSaverBox>
+    </StyledThemeSaverBox>
   )
 }
 

@@ -11,9 +11,10 @@ export const StyledBaseInner = styled.div`
     width: 80vw;
   }
 `
-export const StyledBaseRoot = styled.div`
+export const StyledBaseWrapper = styled.div`
   font-size: 14px;
   background-color: ${({ theme }) => theme.backgroundColor };
   color: ${({theme}) => theme.color};
   min-height: 100vh;
+  padding-top: 1em
 `
