@@ -10,7 +10,6 @@ import { useStyles } from './style';
 function App() {
 
   const appStyles = useStyles();
-
   return (
     <div className={appStyles.root}>
       <CssBaseline />

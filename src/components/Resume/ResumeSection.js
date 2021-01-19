@@ -1,6 +1,6 @@
-import { styled } from '@material-ui/styles';
+import styled from 'styled-components';
 
-const ResumeSection = styled('div')(({
+const ResumeSection = styled.div(({
   theme
 }) => ({
   marginBottom: '3em',

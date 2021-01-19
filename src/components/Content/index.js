@@ -1,4 +1,5 @@
-import { ThemeProvider } from '@material-ui/styles';
+// import { ThemeProvider } from '@material-ui/styles';
+import { ThemeProvider } from 'styled-components';
 import About from 'components/About/';
 import BaseWrapper from 'components/BaseWrapper/';
 import BottomBadge from 'components/BottomBadge/';
@@ -9,7 +10,6 @@ import React from 'react';
 function Content({ appStyles }) {
 
   const { theme } = useThemeContext();
-
   const SiteThemeProvider = React.memo((props) => {
     return(<ThemeProvider theme={props.theme} >
       {props.children}
