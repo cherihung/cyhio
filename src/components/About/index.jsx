@@ -1,12 +1,12 @@
-import { styled } from '@material-ui/styles';
+import styled from 'styled-components';
 import React from 'react';
 
-const H1 = styled('h1')({
-  fontWeight: 300,
-  '& span': {
-    fontWeight: 500,
+const H1 = styled.h1`
+  font-weight: 300;
+  span {
+    font-weight: 500;
   }
-});
+`;
 
 function About({className}) {
 

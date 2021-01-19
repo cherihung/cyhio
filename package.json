@@ -6,7 +6,6 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@welldone-software/why-did-you-render": "^3.3.5",
-    "clsx": "^1.0.4",
     "immer": "^4.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

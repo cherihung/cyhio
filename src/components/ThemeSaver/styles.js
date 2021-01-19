@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { isDarkTheme } from 'styles/utils';
 
-export const ThemeSaverBox = styled.div`
+export const StyledThemeSaverBox = styled.div`
   display: flex;
   align-items: center;
   position: fixed;
