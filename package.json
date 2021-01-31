@@ -15,7 +15,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@welldone-software/why-did-you-render": "^3.3.5",
-    "immer": "^4.0.0",
+    "immer": "^8.0.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-scripts": "^3.4.1",
