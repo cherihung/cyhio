@@ -6,12 +6,12 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@welldone-software/why-did-you-render": "^3.3.5",
-    "immer": "^4.0.0",
+    "immer": "^8.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.4.1",
     "styled-components": "^5.2.1",
-    "use-immer": "^0.3.4"
+    "use-immer": "^0.4.2"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
