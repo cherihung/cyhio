@@ -35,3 +35,7 @@ export const StyledSocialBar = styled.div`
   line-height: 0;
   margin-left: 0.5em;
 `
+
+export const StyledLogo = styled.div`
+  padding-right: 0.5rem;
+`

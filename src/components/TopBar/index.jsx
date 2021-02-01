@@ -2,13 +2,13 @@ import React from 'react';
 import Radio from '@material-ui/core/Radio';
 import IconLink from '@app/components/IconLink';
 import { useThemeContext } from '@app/context/useThemeContext';
-import githubLogo from '@app/images/github.svg';
-import linkedInLogo from '@app/images/linkedin.svg';
-import mediumLogo from '@app/images/medium.svg';
-import twitterLogo from '@app/images/twitter.svg';
+import GithubLogo from '@app/images/github.svg';
+import LinkedInLogo from '@app/images/linkedin.svg';
+import MediumLogo from '@app/images/medium.svg';
+import TwitterLogo from '@app/images/twitter.svg';
 import ThemeMap, { ThemeChoiceKeys } from '@app/styles/themes';
 
-import { StyledSocialBar, StyledLabel, StyledTopBar } from './styles';
+import { StyledSocialBar, StyledLabel, StyledTopBar, StyledLogo } from './styles';
 
 function TopBar() {
 
@@ -33,18 +33,18 @@ function TopBar() {
   return (
     <StyledTopBar theme={theme.theme}>
       <StyledSocialBar>
-        <div><strong>cyh.io</strong></div>
+        <StyledLogo><strong>cyh.io</strong></StyledLogo>
         <IconLink href="https://github.com/cherihung" target="_blank" rel="noopener noreferrer" title="Github">
-          <img src={githubLogo} height="20px" alt="Github" />
+          <GithubLogo width="24" />
         </IconLink>
         <IconLink href="https://twitter.com/cyhung" target="_blank" rel="noopener noreferrer" title="Twitter">
-          <img src={twitterLogo} height="20px" alt="Twitter" />
-        </IconLink>
-        <IconLink href="https://medium.com/@cyhung" target="_blank" rel="noopener noreferrer" title="Medium">
-          <img src={mediumLogo} height="20px" alt="Medium" />
+          <TwitterLogo width="24" />
         </IconLink>
         <IconLink href="https://linkedin.com/in/cyhung" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-          <img src={linkedInLogo} height="20px" alt="LinkedIn" />
+          <LinkedInLogo width="24" />
+        </IconLink>
+        <IconLink href="https://medium.com/@cyhung" target="_blank" rel="noopener noreferrer" title="Medium">
+          <MediumLogo width="24" />
         </IconLink>
       </StyledSocialBar>
       <div className={'radioGroup'}>{themeRadioChoices}</div>

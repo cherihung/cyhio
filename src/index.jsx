@@ -1,6 +1,6 @@
 import './index.css';
 
-import App from '@app/components/App';
+import App from '@app/components/App/';
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import whyDidYouRender from '@welldone-software/why-did-you-render';
