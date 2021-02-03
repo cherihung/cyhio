@@ -1,4 +1,4 @@
-import ThemeMap, { DEFAULT_THEME } from 'styles/themes';
+import ThemeMap, { DEFAULT_THEME } from '@app/styles/themes';
 
 const LOCAL_STORAGE_KEY = 'cyh_theme';
 

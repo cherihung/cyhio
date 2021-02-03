@@ -1,5 +1,5 @@
 import React from 'react';
-import { getUserTheme } from 'service/theme.service';
+import { getUserTheme } from '@app/service/theme.service';
 import { useImmer } from 'use-immer';
 
 const STATES = {

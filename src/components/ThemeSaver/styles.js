@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { isDarkTheme } from 'styles/utils';
+import { isDarkTheme } from '@app/styles/utils';
 
 export const StyledThemeSaverBox = styled.div`
   display: flex;
