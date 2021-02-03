@@ -1,5 +1,5 @@
-import Education from 'data/ed';
-import Experience from 'data/exp';
+import Education from '@app/data/ed';
+import Experience from '@app/data/exp';
 import React from 'react';
 
 import ResumeSection from './ResumeSection';
@@ -34,7 +34,7 @@ function Resume() {
       </ResumeSection>
       <ResumeSection>
         <h4>Skills</h4>
-        <p>Javascript/Typescript, React, NodeJS, GraphQL, Kafka, AWS, Jenkins, Docker, Cassandra, MySQL, ElasticSearch, Angular, AngularJS, CSS-in-JS, CSS3, SASS, Selenium, WebdriverIO</p>
+        <p>Javascript, Typescript, React, NodeJS, GraphQL, Kafka, AWS, Docker, Cassandra, MySQL, ElasticSearch, Jenkins, Angular, AngularJS, CSS-in-JS, CSS3, SASS, Selenium, WebdriverIO</p>
       </ResumeSection>
     </div>
   )
