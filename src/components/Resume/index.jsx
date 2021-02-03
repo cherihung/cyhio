@@ -1,5 +1,5 @@
-import Education from 'data/ed';
-import Experience from 'data/exp';
+import Education from '@app/data/ed';
+import Experience from '@app/data/exp';
 import React from 'react';
 
 import ResumeSection from './ResumeSection';
