@@ -25,16 +25,16 @@ function Resume() {
   return (
     <div>
       <ResumeSection>
+        <h4>Skills</h4>
+        <p>Javascript/Typescript, React, NodeJS, GraphQL, Kafka, AWS, Jenkins, Docker, Cassandra, MySQL, ElasticSearch, Angular, AngularJS, CSS-in-JS, CSS3, SASS, Selenium, WebdriverIO</p>
+      </ResumeSection>
+      <ResumeSection>
         <h4>Related Experience</h4>
         {experienceList}
       </ResumeSection>
       <ResumeSection>
         <h4>Education</h4>
         {educationList}
-      </ResumeSection>
-      <ResumeSection>
-        <h4>Skills</h4>
-        <p>Javascript/Typescript, React, NodeJS, GraphQL, Kafka, AWS, Jenkins, Docker, Cassandra, MySQL, ElasticSearch, Angular, AngularJS, CSS-in-JS, CSS3, SASS, Selenium, WebdriverIO</p>
       </ResumeSection>
     </div>
   )
