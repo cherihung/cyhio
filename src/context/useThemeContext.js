@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { getThemeObject } from '@app/service/theme.service';
+import { getThemeObject } from '@app/service/theme';
 
 import { STATES, ThemeContext } from './theme/provider';
 

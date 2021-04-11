@@ -2,7 +2,7 @@ import { useThemeContext } from '@app/context/useThemeContext';
 import CancelIcon from '@app/images/cancel.svg';
 import CheckIcon from '@app/images/checkmark.svg';
 import React from 'react';
-import { saveUserThemeKey } from '@app/service/theme.service';
+import { saveUserThemeKey } from '@app/service/theme';
 
 import { StyledThemeSaverBox } from './styles';
 
